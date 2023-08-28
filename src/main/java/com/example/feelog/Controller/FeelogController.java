@@ -22,8 +22,9 @@ public class FeelogController {
         return mv;
     }
     @RequestMapping("/signupAction")
-    public ModelAndView signupAction(){
-        ModelAndView mv = new ModelAndView("index.html");
+    public ModelAndView signupAction(/*RegisterRequest request*/){
+        // 회원가입 처리 부분
+        ModelAndView mv = new ModelAndView("sign-up.html");
         return mv;
     }
     @RequestMapping("/bloghome")
@@ -36,7 +37,17 @@ public class FeelogController {
         ModelAndView mv = new ModelAndView("blog-post.html");
         return mv;
     }
-
+    @RequestMapping("/blogwrite")
+    public ModelAndView blogWrite(){
+        ModelAndView mv = new ModelAndView("write.html");
+        return mv;
+    }
+    @RequestMapping("/blogwriteAction")
+    public ModelAndView blogWriteAction(/*WriteRequest request*/){
+        //글 입력 처리 부분
+        ModelAndView mv = new ModelAndView("write.html");
+        return mv;
+    }
 
 
 }
