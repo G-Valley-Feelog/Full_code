@@ -2,6 +2,9 @@ package com.example.feelog.Entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+
+
+import com.example.feelog.Auth.Authority;
 import lombok.*;
 
 
@@ -36,5 +39,18 @@ public class Member {
 
         @Column(name = "updated_at", nullable = false)
         private Timestamp updatedAt;
+
+        @Enumerated(EnumType.STRING)
+        private  Authority authority;
+
+        @Builder
+        public Member(String email, String password, String name, Authority authority){
+                this.email = email;
+                this.password = password;
+                this.name = name;
+                this.authority = authority;
+        }
+
+
 
     }
