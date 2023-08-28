@@ -4,12 +4,9 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import lombok.*;
 
-
-@Data
 @Entity
-@Table(name = "Member")
+@Getter
 public class Member {
-
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,4 +34,10 @@ public class Member {
         @Column(name = "updated_at", nullable = false)
         private Timestamp updatedAt;
 
-    }
+        public Member(String name, String email, String password, String introduce) {
+                this.name = name;
+                this.email = email;
+                this.password = password;
+                this.introduce = introduce;
+        }
+}

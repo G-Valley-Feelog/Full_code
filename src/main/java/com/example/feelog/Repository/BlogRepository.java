@@ -7,8 +7,6 @@ import org.springframework.stereotype.Repository;
 
 
 
-
-@NoRepositoryBean
 @Repository
 public interface BlogRepository extends JpaRepository<Blog, Long> {
 
